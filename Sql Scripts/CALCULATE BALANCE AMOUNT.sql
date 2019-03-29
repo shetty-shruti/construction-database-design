@@ -1,0 +1,18 @@
+## CALCULATE CUSTOMER PAYMENT BALANCE
+SET @X=FN_GET_BALANCE_AMOUNT(1,1);
+SELECT @X;
+
+SET @Y=FN_GET_TOTAL_PROFIT(1);
+SELECT @Y;
+
+SELECT PLUGIN_NAME, PLUGIN_STATUS
+       FROM INFORMATION_SCHEMA.PLUGINS
+       WHERE PLUGIN_NAME LIKE 'keyring%';
+       
+select * from vw_customer_flat_payment_details
+order by payment_id
+limit 1,4;
+
+
+ALTER TABLE ORDERS ENCRYPTION='Y';
+
